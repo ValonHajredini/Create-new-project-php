@@ -5,7 +5,7 @@ if (isset($_POST['submit'])){
     $projectname = filterTheProjectName($_POST['project_name']);
     if ($projectname != '' and $projectname != null){
 //        makeDirectory($projectname);
-        file_force_contents($projectname, indexContent($projectname));
+        file_force_contents($projectname, indexContent($projectname), $dir);
     }
 }else if(isset($_POST['theProject'])){
 deleteTheProject($_POST['theProject']);
@@ -16,6 +16,7 @@ $dirs = scandir($dir);
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" href="assets/images/dashboard-19.png">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 

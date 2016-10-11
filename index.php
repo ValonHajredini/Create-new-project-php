@@ -45,7 +45,7 @@ foreach ($dirs as $directory){
         if (count($dirFolder) == 1){
         ?>
             <div class="col-md-3">
-                <a href="<?php echo $directory?>" class="link">
+                <a href="<?php echo $directory?>/workflow.php" class="link">
                     <div class="well project">
                         <img src="assets/images/project_img.png" alt="" width="30" height="30">
                         <h3 style="text-align: center;">

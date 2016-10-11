@@ -7,6 +7,8 @@ if (isset($_POST['submit'])){
 //        makeDirectory($projectname);
         file_force_contents($projectname, indexContent($projectname));
     }
+}else if(isset($_POST['theProject'])){
+deleteTheProject($_POST['theProject']);
 }
 
 $dirs = scandir($dir);
@@ -16,6 +18,8 @@ $dirs = scandir($dir);
 <head>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/blitzer/jquery-ui.css" type="text/css" />
 </head>
 <body>
 
@@ -47,7 +51,17 @@ foreach ($dirs as $directory){
             <div class="col-md-3">
                 <a href="<?php echo $directory?>/workflow.php" class="link">
                     <div class="well project">
-                        <img src="assets/images/project_img.png" alt="" width="30" height="30">
+                        <img src="assets/images/project_img.png" alt="" class="logo" width="30" height="30">
+<!--                        <img src="assets/images/close.png" alt="" class="delete " width="30" height="30">-->
+
+
+                        <form action="" name="myForm" id="myForm" method="post" onsubmit="">
+                            <input type="hidden" name="confirm" value="=true">
+                            <input type="hidden" name="theProject" value="<?php echo $directory; ?>">
+                            <button type="submit"  class="glyphicon glyphicon-remove delete confirm" onclick="return ifDelete('<?php echo $directory  ?>')"> </button>
+
+                        </form>
+
                         <h3 style="text-align: center;">
                             <?php echo strtoupper($directory); ?>
                         </h3>

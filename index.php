@@ -1,4 +1,5 @@
 <?php
+$dir ="".dirname(__FILE__)."\\"; // Current location for generating new workspace
 include "assets/php_includes/functiones.php";
 if (isset($_POST['submit'])){
     $projectname = filterTheProjectName($_POST['project_name']);
@@ -7,7 +8,7 @@ if (isset($_POST['submit'])){
         file_force_contents($projectname, indexContent($projectname));
     }
 }
-$dir ="C:/wamp64/www/PHP/";
+
 $dirs = scandir($dir);
 ?>
 <!DOCTYPE html>

@@ -1,0 +1,36 @@
+a .project:hover {
+     background-color: #2aabd2;
+    color: white;
+}
+a .project:hover h3{
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: none;
+}
+.project1{
+    position: relative;
+}
+.project img{
+    position: absolute;
+    top:4px;
+    left:20px;
+}
+#new_project_form{
+    margin-top: 25px;
+    padding:10px 0 0 0 ;
+    float:right;
+}
+
+#new_project_form #project_name{
+    width:300px;
+    padding:5px;
+    border:1px solid #1b6d85;
+    border-radius: 4px;
+
+}
+#new_form_button{
+    float: right;
+    margin-right: 40px;
+    margin-top: 36px;
+}
